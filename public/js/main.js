@@ -1,27 +1,28 @@
-const deleteBtn = document.querySelectorAll('.del')
-const todoItem = document.querySelectorAll('span.not')
+const removeQuote = document.querySelectorAll('.fa-trash')
+// const quoteItem = document.querySelectorAll()
 const todoComplete = document.querySelectorAll('span.completed')
 
-Array.from(deleteBtn).forEach((el)=>{
-    el.addEventListener('click', deleteTodo)
+Array.from(removeQuote).forEach((el)=>{
+    el.addEventListener('click', deleteQuote)
 })
 
-Array.from(todoItem).forEach((el)=>{
-    el.addEventListener('click', markComplete)
-})
+// Array.from(todoItem).forEach((el)=>{
+//     el.addEventListener('click', markComplete)
+// })
 
 Array.from(todoComplete).forEach((el)=>{
     el.addEventListener('click', markIncomplete)
 })
 
-async function deleteTodo(){
-    const todoId = this.parentNode.dataset.id
+async function deleteQuote(){
+    const quoteId = this.parentNode.dataset.id
+    console.log(quoteId)
     try{
-        const response = await fetch('todos/deleteTodo', {
+        const response = await fetch('quotes/deleteQuote', {
             method: 'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'quoteIdFromJSFile': quoteId
             })
         })
         const data = await response.json()

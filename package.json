@@ -1,13 +1,13 @@
 {
-  "name": "todo-mvc-auth-local",
+  "name": "mvc-auth-local-quotations",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Simple Quotations Board App is built using the MVC Architecture, we have also implemented \"authorization\" so folx can sign up, customize & personalize the app",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Marie Smith",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -24,5 +24,13 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "validator": "^13.6.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mellen-code/mvc-auth-quotations.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mellen-code/mvc-auth-quotations/issues"
+  },
+  "homepage": "https://github.com/mellen-code/mvc-auth-quotations#readme"
 }

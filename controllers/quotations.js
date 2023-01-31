@@ -1,21 +1,21 @@
-const Todo = require('../models/Todo')
+const Quote = require('../models/Quotation')
 
 module.exports = {
-    getTodos: async (req,res)=>{
+    getQuotes: async (req,res)=>{
         console.log(req.user)
         try{
-            const todoItems = await Todo.find({userId:req.user.id})
-            const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
-            res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
+            const quoteItems = await Quote.find({userId:req.user.id})
+            const quotesLeft = await Quote.countDocuments({userId:req.user.id,completed: false})
+            res.render('quotes.ejs', {quotes: quoteItems, left: quotesLeft, user: req.user})
         }catch(err){
             console.log(err)
         }
     },
-    createTodo: async (req, res)=>{
+    createQuote: async (req, res)=>{
         try{
-            await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id})
-            console.log('Todo has been added!')
-            res.redirect('/todos')
+            await Quote.create({name: req.body.quotePerson, quote: req.body.quoteItem, completed: false, userId: req.user.id})
+            console.log('Quotation has been added!')
+            res.redirect('/quotes')
         }catch(err){
             console.log(err)
         }
@@ -42,11 +42,11 @@ module.exports = {
             console.log(err)
         }
     },
-    deleteTodo: async (req, res)=>{
-        console.log(req.body.todoIdFromJSFile)
+    removeQuote: async (req, res)=>{
+        console.log(req.body.quoteIdFromJSFile)
         try{
-            await Todo.findOneAndDelete({_id:req.body.todoIdFromJSFile})
-            console.log('Deleted Todo')
+            await Quote.findOneAndDelete({_id:req.body.quoteIdFromJSFile})
+            console.log('Deleted Quotation')
             res.json('Deleted It')
         }catch(err){
             console.log(err)
