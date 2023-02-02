@@ -10,8 +10,8 @@ const QuotationSchema = new mongoose.Schema({
     required: true,
   },
   upvote: {
-    type: Boolean,
-    required: false,
+    type: Number,
+    required: true,
   },
   userId: {
     type: String,

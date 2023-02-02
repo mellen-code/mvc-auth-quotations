@@ -13,20 +13,26 @@ module.exports = {
     },
     createQuote: async (req, res)=>{
         try{
-            await Quote.create({name: req.body.quotePerson, quote: req.body.quoteItem, completed: false, userId: req.user.id})
+            await Quote.create({name: req.body.quotePerson, quote: req.body.quoteItem, upvote: 0, userId: req.user.id})
             console.log('Quotation has been added!')
             res.redirect('/quotes')
         }catch(err){
             console.log(err)
         }
     },
-    markComplete: async (req, res)=>{
-        try{
-            await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: true
+    addLike: async (req, res)=>{
+        try { 
+            await Quote.findOneAndUpdate({_id:req.body.quoteIdFromJSFile}, 
+                {
+                $set: {
+                    upvote: req.body.quoteUpvoteFromJSFile + 1
+                }
+            }, {
+                sort: {upvote: 1},
+                upsert: true
             })
-            console.log('Marked Complete')
-            res.json('Marked Complete')
+            console.log('Upvote added')
+            res.json('Upvote added')
         }catch(err){
             console.log(err)
         }

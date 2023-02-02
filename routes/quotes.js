@@ -7,7 +7,7 @@ router.get('/', ensureAuth, quotesController.getQuotes)
 
 router.post('/createQuote', quotesController.createQuote)
 
-// router.put('/markComplete', todosController.markComplete)
+router.put('/addLike', quotesController.addLike)
 
 // router.put('/markIncomplete', todosController.markIncomplete)
 

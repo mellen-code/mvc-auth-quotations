@@ -10,16 +10,29 @@
 </head>
 <body>
     <h1>Best Quotations</h1>
-    <ul>
+    <!-- <ul>
     <% quotes.forEach( el => { %>
             <li class='quoteItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'></span>
-                <span><%= el.name %>: </span>
+                <!-- <span class='<%= el.completed === true ? 'completed' : 'not'%>'></span> -->
+                <!-- <span><%= el.name %>: </span>
                 <span><%= el.quote %></span>
+                <span><%= el.upvote %></span>
                 <span class='fa fa-thumbs-up'></span>
                 <span class='fa fa-trash'></span>
             </li>
     <% }) %>    
+    </ul> --> 
+
+    <ul>
+        <% for(let i=0; i < quotes.length; i++) {%> 
+            <li class="quoteItem">
+                <span><%= quotes[i].name %>: </span>
+                <span><%= quotes[i].quote %></span>
+                <span><%= quotes[i].upvote %></span>
+                <span class='fa fa-thumbs-up'></span>
+                <span class='fa fa-trash'></span>
+            </li>
+            <% } %>
     </ul>
 
     <h2><%= user.userName %> has <%= left %> things left to do.</h2>

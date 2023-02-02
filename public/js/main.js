@@ -1,14 +1,14 @@
 const removeQuote = document.querySelectorAll('.fa-trash')
-// const quoteItem = document.querySelectorAll()
+const insertLike = document.querySelectorAll('.fa-thumbs-up')
 const todoComplete = document.querySelectorAll('span.completed')
 
 Array.from(removeQuote).forEach((el)=>{
     el.addEventListener('click', deleteQuote)
 })
 
-// Array.from(todoItem).forEach((el)=>{
-//     el.addEventListener('click', markComplete)
-// })
+Array.from(insertLike).forEach((el)=>{
+    el.addEventListener('click', addLike)
+})
 
 Array.from(todoComplete).forEach((el)=>{
     el.addEventListener('click', markIncomplete)
@@ -22,7 +22,8 @@ async function deleteQuote(){
             method: 'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'quoteIdFromJSFile': quoteId
+                'quoteIdFromJSFile': quoteId,
+
             })
         })
         const data = await response.json()
@@ -33,16 +34,23 @@ async function deleteQuote(){
     }
 }
 
-async function markComplete(){
-    const todoId = this.parentNode.dataset.id
+async function addLike(){
+    const quoteName = this.parentNode.childNodes[3].innerHTML
+    const quoteQuote = this.parentNode.childNodes[5].innerHTML
+    const quoteUpvotes = Number(this.parentNode.childNodes[7].innerHTML)
+    const quoteId = this.parentNode.dataset.id
+    
     try{
-        const response = await fetch('todos/markComplete', {
+        const response = await fetch('quotes/addLike', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'quoteNameFromJSFile': quoteName,
+                'quoteQuoteFromJSFile': quoteQuote,
+                'quoteUpvoteFromJSFile': quoteUpvotes,
+                'quoteIdFromJSFile': quoteId             
             })
-        })
+        })     
         const data = await response.json()
         console.log(data)
         location.reload()
