@@ -9,41 +9,39 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Best Quotations</h1>
-    <!-- <ul>
-    <% quotes.forEach( el => { %>
-            <li class='quoteItem' data-id='<%=el._id%>'>
-                <!-- <span class='<%= el.completed === true ? 'completed' : 'not'%>'></span> -->
-                <!-- <span><%= el.name %>: </span>
-                <span><%= el.quote %></span>
-                <span><%= el.upvote %></span>
-                <span class='fa fa-thumbs-up'></span>
-                <span class='fa fa-trash'></span>
-            </li>
-    <% }) %>    
-    </ul> --> 
+    <!-- <div class="header"> -->
+        <h1>Only the Best Quotations</h1>
+    <!-- </div> -->
 
-    <ul>
-        <% for(let i=0; i < quotes.length; i++) {%> 
-            <li class="quoteItem">
-                <span><%= quotes[i].name %>: </span>
-                <span><%= quotes[i].quote %></span>
-                <span><%= quotes[i].upvote %></span>
-                <span class='fa fa-thumbs-up'></span>
-                <span class='fa fa-trash'></span>
-            </li>
-            <% } %>
-    </ul>
+    <div class="quotes">
+        <ul>
+        <% quotes.forEach( el => { %>
+                <li class='quoteItem' data-id='<%=el._id%>'>
+                    <!-- <span class='<%= el.completed === true ? 'completed' : 'not'%>'></span> -->
+                    &nbsp;<span><%= el.name %>: </span>
+                    <span><%= el.quote %></span>
+                    <span><%= el.upvote %></span>
+                    <span class='fa fa-thumbs-up'></span>
+                    <span class='fa fa-trash'></span>
+                </li>
+        <% }) %>    
+        </ul> 
+        <div class="logout">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
 
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+    <div class="addQuotation">
+        <h2>Add an Awesome Quotation:</h2>
+        <form action="/quotes/createQuote" method='POST'>
+            <input type="text" id="whoSaidIt" placeholder="Who said it" name='quotePerson'>
+            <input type="text" id="whatTheySaid" placeholder="What they said" name='quoteItem'>
+            <input type="submit" id="submit">
+        </form>
+    </div>
 
-    <form action="/quotes/createQuote" method='POST'>
-        <input type="text" placeholder="Who said it" name='quotePerson'>
-        <input type="text" placeholder="What they said" name='quoteItem'>
-        <input type="submit">
-    </form>
+    <!-- <h2><%= user.userName %> has <%= left %> things left to do.</h2> -->
 
-    <a href="/logout">Logout</a>
 
     <script src="js/main.js"></script>
 </body>
