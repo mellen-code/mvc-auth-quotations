@@ -1,4 +1,4 @@
-# Introduction
+# The 'Best of' Quotations App
 
 A 'Best of' Quotations List App, built using the MVC Architecture, also implemented "authorization" so users can sign up, customize & personalize the app 
 
