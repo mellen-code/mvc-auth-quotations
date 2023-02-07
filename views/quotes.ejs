@@ -18,11 +18,16 @@
         <% quotes.forEach( el => { %>
                 <li class='quoteItem' data-id='<%=el._id%>'>
                     <!-- <span class='<%= el.completed === true ? 'completed' : 'not'%>'></span> -->
-                    &nbsp;<span><%= el.name %>: </span>
-                    <span><%= el.quote %></span>
-                    <span><%= el.upvote %></span>
-                    <span class='fa fa-thumbs-up'></span>
-                    <span class='fa fa-trash'></span>
+                    <div class="quoteText">
+                        &nbsp;<span><%= el.name %>: </span>
+                        <span><%= el.quote %></span>
+                    </div>
+                    
+                        &nbsp;<span><%= el.upvote %></span>
+                        <span class='fa fa-thumbs-up'></span>
+                    
+                        <span class='fa fa-trash'></span>
+                    
                 </li>
         <% }) %>    
         </ul> 

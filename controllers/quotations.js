@@ -22,7 +22,7 @@ module.exports = {
     },
     addLike: async (req, res)=>{
         try { 
-            await Quote.findOneAndUpdate({_id:req.body.quoteIdFromJSFile, upvote: req.body.quoteUpvoteFromJSFile}, 
+            await Quote.updateOne({_id:req.body.quoteIdFromJSFile, upvote: req.body.quoteUpvoteFromJSFile}, 
                 {
                 $set: {
                     upvote: req.body.quoteUpvoteFromJSFile + 1
@@ -30,9 +30,7 @@ module.exports = {
             }, {
                 sort: {upvote: -1},
                 upsert: true
-            }
-            
-            )
+            })
             console.log('Upvote added')
             res.json('Upvote added')
         }catch(err){
