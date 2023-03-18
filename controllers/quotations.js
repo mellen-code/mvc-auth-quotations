@@ -22,15 +22,16 @@ module.exports = {
     },
     addLike: async (req, res)=>{
         try { 
-            await Quote.updateOne({_id:req.body.quoteIdFromJSFile, upvote: req.body.quoteUpvoteFromJSFile}, 
+            await Quote.findOneAndUpdate({_id:req.body.quoteIdFromJSFile}, 
                 {
-                $set: {
-                    upvote: req.body.quoteUpvoteFromJSFile + 1
+                $inc: {
+                    upvote: 1
                 }
-            }, {
-                sort: {upvote: -1},
-                upsert: true
             })
+            // await Quote.find(null, {sort: {upvote: "desc"}}, function(err, docs) {})
+            await Quote.find().sort({quoteUpvoteFromJSFile: "desc"})
+
+            console.log(Quote.find())
             console.log('Upvote added')
             res.json('Upvote added')
         }catch(err){
