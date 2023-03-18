@@ -15,7 +15,9 @@ require('dotenv').config({path: './config/.env'})
 // Passport config
 require('./config/passport')(passport)
 
-connectDB()
+// connectDB()
+
+
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
@@ -41,6 +43,8 @@ app.use(flash())
 app.use('/', mainRoutes)
 app.use('/quotes', quotesRoutes)
  
-app.listen(process.env.PORT, ()=>{
-    console.log('Server is running, you better catch it!')
-})    
+
+
+// app.listen(process.env.PORT, ()=>{
+//     console.log('Server is running, you better catch it!')
+// })    
