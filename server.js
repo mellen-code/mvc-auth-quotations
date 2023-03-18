@@ -16,7 +16,15 @@ require('dotenv').config({path: './config/.env'})
 require('./config/passport')(passport)
 
 // connectDB()
-
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+}
 
 
 app.set('view engine', 'ejs')
@@ -43,8 +51,12 @@ app.use(flash())
 app.use('/', mainRoutes)
 app.use('/quotes', quotesRoutes)
  
-
-
 // app.listen(process.env.PORT, ()=>{
 //     console.log('Server is running, you better catch it!')
-// })    
+// })   
+
+connectDB().then(() => {
+  app.listen(PORT, () => {
+      console.log("listening for requests");
+  })
+})
