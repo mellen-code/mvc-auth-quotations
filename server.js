@@ -18,7 +18,7 @@ require('./config/passport')(passport)
 // connectDB()
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
+    const conn = await mongoose.connect(process.env.PORT);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.log(error);
@@ -56,7 +56,7 @@ app.use('/quotes', quotesRoutes)
 // })   
 
 connectDB().then(() => {
-  app.listen(PORT, () => {
+  app.listen(process.env.PORT, () => {
       console.log("listening for requests");
   })
 })
