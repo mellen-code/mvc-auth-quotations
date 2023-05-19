@@ -1,14 +1,16 @@
-# The 'Best of' Quotations App
+# Quotes Board
 
-A 'Best of' Quotations List App, built using the MVC Architecture, also implemented "authorization" so users can sign up, customize & add, upvote and delete quotations of their choosing. 
+Create a list of your favorite quotes! 
+Users can login, view their board of quotes and add, upvote and delete quotes of their choosing. 
+Full-stack app built with Node.js, Express.js, Passport, MongoDB, JavaScript, EJS and Bootstrap. Utilized MVC Architecture to organize file structure. 
 
 ---
 
-## Tech used: ![JAVASCRIPT BADGE](https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=3c7f5d&style=plastic&logo=javascript)![EJS BADGE](https://img.shields.io/static/v1?label=|&message=EJS&color=90A93A&style=plastic&logo=ejs)![CSS BADGE](https://img.shields.io/static/v1?label=|&message=CSS3&color=285f65&style=plastic&logo=css3)![EXPRESS BADGE](https://img.shields.io/static/v1?label=|&message=EXPRESS&color=90A93A&style=plastic&logo=express)![MONGO BADGE](https://img.shields.io/static/v1?label=|&message=MONGO-DB&color=cdd148&style=plastic&logo=mongodb)![MONGOOSE BADGE](https://img.shields.io/static/v1?label=|&message=MONGOOSE&color=880101&style=plastic&logo=mongoose)![NODE BADGE](https://img.shields.io/static/v1?label=|&message=NODE&color=cbb148&style=plastic&logo=node)![PASSPORT BADGE](https://img.shields.io/static/v1?label=|&message=PASSPORT&color=36DF79&style=plastic&logo=passport)![BCRPYT BADGE](https://img.shields.io/static/v1?label=|&message=BCRYPT&color=8BA9E5&style=plastic&logo=bcrpyt)
+## Tech used: ![JAVASCRIPT BADGE](https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=3c7f5d&style=plastic&logo=javascript)![EJS BADGE](https://img.shields.io/static/v1?label=|&message=EJS&color=90A93A&style=plastic&logo=ejs)![CSS BADGE](https://img.shields.io/static/v1?label=|&message=CSS3&color=285f65&style=plastic&logo=css3)![EXPRESS BADGE](https://img.shields.io/static/v1?label=|&message=EXPRESS&color=90A93A&style=plastic&logo=express)![MONGO BADGE](https://img.shields.io/static/v1?label=|&message=MONGO-DB&color=cdd148&style=plastic&logo=mongodb)![MONGOOSE BADGE](https://img.shields.io/static/v1?label=|&message=MONGOOSE&color=880101&style=plastic&logo=mongoose)![NODE BADGE](https://img.shields.io/static/v1?label=|&message=NODE&color=cbb148&style=plastic&logo=node)![PASSPORT BADGE](https://img.shields.io/static/v1?label=|&message=PASSPORT&color=36DF79&style=plastic&logo=passport)![BCRPYT BADGE](https://img.shields.io/static/v1?label=|&message=BCRYPT&color=8BA9E5&style=plastic&logo=bcrpyt)![BOOTSTRAP BADGE](https://img.shields.io/static/v1?label=|&message=BOOTSTRAP&color=316c5e&style=plastic&logo=bootstrap)
 
 
 ## Optimizations
-First, I would sort quotations in order of descending number of upvotes. I would also like to add a feature where users can create separate lists, with the option to grant access to other specified users.
+First, I'd like to sort quotations in order of descending number of upvotes. I would also like to add a feature where users can create separate lists, with the option to grant access to other specified users.
 
 ## Lessons Learned
 Incorporating Morgan, validator and BCrypt into Passport.js functionality. This project also helped reinforce principles of server operations - retrieving, updating and displaying in the DOM database documents.
