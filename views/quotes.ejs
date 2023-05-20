@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favorite Quotations</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!-- <div class="header"> -->
-        <h1>Only the Best Quotations</h1>
-    <!-- </div> -->
-
-    <div class="quotes">
+<%- include('partials/header') -%>
+<div class="d-flex container marginTop4 phoneDisplayFlex">
+    <div>
         <ul>
         <% quotes.forEach( el => { %>
-                <li class='quoteItem' data-id='<%=el._id%>'>
-                    <!-- <span class='<%= el.completed === true ? 'completed' : 'not'%>'></span> -->
+                <li class='quoteItem mb-4' data-id='<%=el._id%>'>
                     <div class="quoteText">
                         &nbsp;<span><%= el.name %>: </span>
                         <span><%= el.quote %></span>
@@ -32,21 +18,32 @@
                 </li>
         <% }) %>    
         </ul> 
-        <div class="logout">
-            <a href="/logout">Logout</a>
-        </div>
+        
     </div>
 
-    <div class="addQuotation">
+    <div>
         <h2>Add an Awesome Quotation:</h2>
         <form action="/quotes/createQuote" method='POST'>
-            <input type="text" id="whoSaidIt" placeholder="Who said it" name='quotePerson'>
-            <input type="text" id="whatTheySaid" placeholder="What they said" name='quoteItem'>
-            <input type="submit" id="submit">
+            <div class="marginTop4">
+                <label for="whoSaidIt" class="form-label">Who Said It</label>
+                <input type="text" id="whoSaidIt" name='quotePerson' class="form-control col-6 w-100" aria-label="who said it">
+            </div>
+            <div class="marginTop4">
+                <label for="whatTheySaid" class="form-label">What They Said</label>
+                <input type="text" id="whatTheySaid" name='quoteItem' class="form-control col-6 w-100" aria-label="what they said">
+            </div>
+            <input type="submit" id="submit" class="btn btn-light btnHover marginTop4">
+
+            <div class="marginTop4">
+                <a href="/logout" class="btn btn-light btnHover">Logout</a>
+            </div>
         </form>
     </div>
 
-    <!-- <h2><%= user.userName %> has <%= left %> things left to do.</h2> -->
+    
+</div>
+
+   
 
 
     <script src="js/main.js"></script>

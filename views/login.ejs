@@ -1,26 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>    
-    <% } %>
-    <% if (locals.messages.info) { %>
-        <% messages.info.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>    
-    <% } %>
-    <form action="/login" method="POST">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
-    </form>
-</body>
-</html>
+<%- include('partials/header') -%>
+
+    <main class="container">
+        <div class="mt-4 marginLeft20 row justify-content-center">
+            
+                <% if (locals.messages.errors) { %>
+                    <% messages.errors.forEach( el => { %>
+                        <div class="alert alert-danger"><%= el.msg %></div>
+                    <% }) %>    
+                <% } %>
+                <% if (locals.messages.info) { %>
+                    <% messages.info.forEach( el => { %>
+                        <div class="alert alert-danger"><%= el.msg %></div>
+                    <% }) %>    
+                <% } %>
+                    
+                <form action="/login" method="POST">
+                    <div class="row g-3">
+                        <div class="col-sm-7">
+                            <input type="email" name="email" placeholder="Email" class="form-control col-6" aria-label="email">
+                        </div>
+                        <div class="col-sm-7 mr-10">
+                            <input type="password" name="password" placeholder="Password" class="form-control col-6" aria-label="password">
+                        </div>
+                        
+                        <div class="col-10">
+                            <input type="submit" class="btn btn-light btnHover">
+                        </div>
+                        <div class="col-10">
+                            <a href="/" class="btn btn-light btnHover">Back</a>
+                        </div>
+                    
+                        </div>
+                    </form>
+            
+        
+        </div>
+    </main>
