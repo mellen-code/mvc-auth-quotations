@@ -1,4 +1,4 @@
-# Quotes Board
+# Quotes Board <a href="https://quotationsboard.cyclic.app/" target="_blank">Visit Here</a>
 
 Create a list of your favorite quotes! 
 Users can login, view their board of quotes and add, upvote and delete quotes of their choosing. 
@@ -21,10 +21,10 @@ Incorporating Morgan, validator and BCrypt into Passport.js functionality. This 
 
   <tr>
     <td width="50%"  style="align:center;" valign="top">
-<a target="_blank" href="">mariesmith.me</a>
+<a target="_blank" href="">ConfiDance</a>
         <br />
       <a target="_blank" href="">
-            <img src="https://media.giphy.com/media/BXLT2FUtBYmKDGl0nd/giphy.gif" width="100%"  alt="link to my portfolio site"/>
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjM4NmJjM2IyMzIxMGNiZWZiMjMzNmI5NWE4OWIwMTE3ZjhjZGZlNyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/OXCaDWUVwy5ViA30od/giphy.gif" width="100%"  alt="link to Confidance application"/>
         </a>
     </td>
     <td width="50%" valign="top">
