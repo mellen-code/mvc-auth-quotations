@@ -1,7 +1,7 @@
 # Quotes Board <a href="https://quotationsboard.cyclic.app/" target="_blank">Visit Here</a>
 
 Create a list of your favorite quotes! 
-Users can login, view their board of quotes and add, upvote and delete quotes of their choosing. 
+Users can login, view their board of quotes and add, upvote and delete quotes of their choosing. Quotes are displayed in descending order of number of upvotes.
 Full-stack app built with Node.js, Express.js, Passport, MongoDB, JavaScript, EJS and Bootstrap. Utilized MVC Architecture to organize file structure. 
 
 ---
@@ -10,7 +10,7 @@ Full-stack app built with Node.js, Express.js, Passport, MongoDB, JavaScript, EJ
 
 
 ## Optimizations
-First, I'd like to sort quotations in order of descending number of upvotes. I would also like to add a feature where users can create separate lists, with the option to grant access to other specified users.
+I would like to add a feature where users can create separate boards, as well as the option to grant access to other specified users.
 
 ## Lessons Learned
 Incorporating Morgan, validator and BCrypt into Passport.js functionality. This project also helped reinforce principles of server operations - retrieving, updating and displaying in the DOM database documents.

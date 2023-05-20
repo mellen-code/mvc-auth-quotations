@@ -4,10 +4,9 @@ module.exports = {
     getQuotes: async (req,res)=>{
         console.log(req.user)
         try{
-            const quoteItems = await Quote.find({userId:req.user.id})
-            const quotesLeft = await Quote.countDocuments({userId:req.user.id,completed: false})
-            res.render('quotes.ejs', {quotes: quoteItems, left: quotesLeft, user: req.user})
-        }catch(err){
+            const quoteItems = await Quote.find({userId:req.user.id}).sort({upvote: 'desc'})
+            res.render('quotes.ejs', {quotes: quoteItems, user: req.user})
+        } catch(err){
             console.log(err)
         }
     },
@@ -16,7 +15,7 @@ module.exports = {
             await Quote.create({name: req.body.quotePerson, quote: req.body.quoteItem, upvote: 0, userId: req.user.id})
             console.log('Quotation has been added!')
             res.redirect('/quotes')
-        }catch(err){
+        } catch(err){
             console.log(err)
         }
     },
