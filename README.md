@@ -1,4 +1,4 @@
-# Quotes Board <a href="https://quotationsboard.cyclic.app/" target="_blank">Visit Here</a>
+# Quotes Board <a href="https://quotes-board.cyclic.app/" target="_blank">Visit Here</a>
 
 Create a list of your favorite quotes! 
 Users can login, view their board of quotes and add, upvote and delete quotes of their choosing. Quotes are displayed in descending order of number of upvotes.
