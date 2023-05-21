@@ -41,6 +41,7 @@ async function addLike(){
     const quoteId = this.parentNode.dataset.id
     
     try{
+        console.log('testing')
         const response = await fetch('quotes/addLike', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
